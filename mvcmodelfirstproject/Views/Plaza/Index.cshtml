@@ -1,0 +1,46 @@
+﻿@model IEnumerable<mvcmodelfirstproject.Models.plaza>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.plazaAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.plazaAdres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.plazaAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.plazaAdres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefon)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.plazaNo }) |
+            
+            @Html.ActionLink("Sil", "Delete", new { id=item.plazaNo })
+        </td>
+    </tr>
+}
+
+</table>

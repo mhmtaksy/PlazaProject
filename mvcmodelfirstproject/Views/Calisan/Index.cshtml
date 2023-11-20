@@ -1,0 +1,52 @@
+﻿@model IEnumerable<mvcmodelfirstproject.Models.calisan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adsoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calisanTel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departman.departmanAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.adsoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calisanTel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.departman.departmanAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.calisanNo }) |
+           
+            @Html.ActionLink("Sil", "Delete", new { id=item.calisanNo })
+        </td>
+    </tr>
+}
+
+</table>
